@@ -1,0 +1,353 @@
+[
+        {
+        "name": "Carlos Gomez",
+        "email": "carlos_gomez@cabichui.com",
+        "password": "pass_928311",
+        "month": "04",
+        "day": "03",
+        "year": "1997",
+        "username": "CarlosGomezbio339"
+    },
+    {
+        "name": "Sofia Lopez",
+        "email": "sofia_lopez@cabichui.com",
+        "password": "pass_772839",
+        "month": "02",
+        "day": "22",
+        "year": "1996",
+        "username": "SofiaLopezjid749"
+    },
+    {
+        "name": "Maria Lopez",
+        "email": "maria_lopez@cabichui.com",
+        "password": "pass_662017",
+        "month": "08",
+        "day": "14",
+        "year": "2000",
+        "username": "MariaLopezzkb924"
+    },
+    {
+        "name": "Jose Torres",
+        "email": "jose_torres@cabichui.com",
+        "password": "pass_310028",
+        "month": "06",
+        "day": "09",
+        "year": "1995",
+        "username": "JoseTorresvxj179"
+    }
+    ,{
+        "name": "Laura Gomez",
+        "email": "laura_gomez@cabichui.com",
+        "password": "pass_440221",
+        "month": "03",
+        "day": "11",
+        "year": "1993",
+        "username": "LauraGomezpwu566"
+    },
+    {
+        "name": "Ana Gutierrez",
+        "email": "ana_gutierrez@cabichui.com",
+        "password": "pass_559103",
+        "month": "12",
+        "day": "26",
+        "year": "1992",
+        "username": "AnaGutierrezjgu258"
+    },
+    {
+        "name": "Juan Castillo",
+        "email": "juan_castillo@cabichui.com",
+        "password": "pass_717200",
+        "month": "11",
+        "day": "21",
+        "year": "1994",
+        "username": "JuanCastilloofv599"
+    },
+    {
+        "name": "Luisa Fernandez",
+        "email": "luisa_fernandez@cabichui.com",
+        "password": "pass_882713",
+        "month": "07",
+        "day": "18",
+        "year": "2001",
+        "username": "LuisaFernandezprd268"
+    },
+    {
+        "name": "Pedro Diaz",
+        "email": "pedro_diaz@cabichui.com",
+        "password": "pass_772188",
+        "month": "05",
+        "day": "03",
+        "year": "1998",
+        "username": "PedroDiazxau723"
+    },
+    {
+        "name": "Laura Torres",
+        "email": "laura_torres@cabichui.com",
+        "password": "pass_330112",
+        "month": "10",
+        "day": "09",
+        "year": "1997",
+        "username": "LauraTorreskke892"
+    },
+        {
+        "name": "Carlos Lopez",
+        "email": "carlos_lopez@cabichui.com",
+        "password": "pass_118322",
+        "month": "03",
+        "day": "05",
+        "year": "1996",
+        "username": "CarlosLopezbdp910"
+    },
+    {
+        "name": "Miguel Gomez",
+        "email": "miguel_gomez@cabichui.com",
+        "password": "pass_991883",
+        "month": "01",
+        "day": "12",
+        "year": "1991",
+        "username": "MiguelGomezcvx445"
+    },
+    {
+        "name": "Luisa Perez",
+        "email": "luisa_perez@cabichui.com",
+        "password": "pass_440113",
+        "month": "06",
+        "day": "22",
+        "year": "1993",
+        "username": "LuisaPereznhd417"
+    },
+    {
+        "name": "Jose Ramirez",
+        "email": "jose_ramirez@cabichui.com",
+        "password": "pass_550223",
+        "month": "08",
+        "day": "08",
+        "year": "1994",
+        "username": "JoseRamireznrc010"
+    },
+    {
+        "name": "Ana Torres",
+        "email": "ana_torres@cabichui.com",
+        "password": "pass_732411",
+        "month": "04",
+        "day": "01",
+        "year": "2000",
+        "username": "AnaTorrestgy189"
+    },
+    {
+        "name": "Juan Lopez",
+        "email": "juan_lopez@cabichui.com",
+        "password": "pass_133229",
+        "month": "07",
+        "day": "19",
+        "year": "1990",
+        "username": "JuanLopezcup306"
+    },
+    {
+        "name": "Sofia Diaz",
+        "email": "sofia_diaz@cabichui.com",
+        "password": "pass_337204",
+        "month": "02",
+        "day": "07",
+        "year": "1992",
+        "username": "SofiaDiazthq351"
+    },
+    {
+        "name": "Maria Ramirez",
+        "email": "maria_ramirez@cabichui.com",
+        "password": "pass_229381",
+        "month": "09",
+        "day": "28",
+        "year": "1997",
+        "username": "MariaRamirezkjz149"
+    },
+    {
+        "name": "Juan Fernandez",
+        "email": "juan_fernandez@cabichui.com",
+        "password": "pass_677820",
+        "month": "10",
+        "day": "11",
+        "year": "1993",
+        "username": "JuanFernandezofc349"
+    },
+    {
+        "name": "Pedro Vargas",
+        "email": "pedro_vargas@cabichui.com",
+        "password": "pass_222910",
+        "month": "11",
+        "day": "02",
+        "year": "1998",
+        "username": "PedroVargasxos393"
+    },
+    {
+        "name": "Luis Castillo",
+        "email": "luis_castillo@cabichui.com",
+        "password": "pass_880301",
+        "month": "12",
+        "day": "19",
+        "year": "1991",
+        "username": "LuisCastillohdl153"
+    },
+        {
+        "name": "Miguel Gutierrez",
+        "email": "miguel_gutierrez@cabichui.com",
+        "password": "pass_110022",
+        "month": "04",
+        "day": "16",
+        "year": "1994",
+        "username": "MiguelGutierrezila259"
+    },
+    {
+        "name": "Laura Ramirez",
+        "email": "laura_ramirez@cabichui.com",
+        "password": "pass_448210",
+        "month": "09",
+        "day": "06",
+        "year": "1995",
+        "username": "LauraRamirezbvk920"
+    },
+        {
+        "name": "Ana Lopez",
+        "email": "ana_lopez@cabichui.com",
+        "password": "pass_332801",
+        "month": "05",
+        "day": "20",
+        "year": "1992",
+        "username": "AnaLopezehg824"
+    },
+    {
+        "name": "Carlos Diaz",
+        "email": "carlos_diaz@cabichui.com",
+        "password": "pass_551903",
+        "month": "03",
+        "day": "23",
+        "year": "1990",
+        "username": "CarlosDiazfej694"
+    },
+    {
+        "name": "Jose Fernandez",
+        "email": "jose_fernandez@cabichui.com",
+        "password": "pass_992311",
+        "month": "01",
+        "day": "14",
+        "year": "2001",
+        "username": "JoseFernandezcep291"
+    },
+    {
+        "name": "Luisa Vargas",
+        "email": "luisa_vargas@cabichui.com",
+        "password": "pass_441002",
+        "month": "07",
+        "day": "27",
+        "year": "1998",
+        "username": "LuisaVargaskft847"
+    },
+    {
+        "name": "Sofia Gomez",
+        "email": "sofia_gomez@cabichui.com",
+        "password": "pass_990122",
+        "month": "08",
+        "day": "03",
+        "year": "1999",
+        "username": "SofiaGomezdpo114"
+    },
+        {
+        "name": "Maria Fernandez",
+        "email": "maria_fernandez@cabichui.com",
+        "password": "pass_340928",
+        "month": "06",
+        "day": "02",
+        "year": "1996",
+        "username": "MariaFernandezlbl929"
+    },
+    {
+        "name": "Pedro Gutierrez",
+        "email": "pedro_gutierrez@cabichui.com",
+        "password": "pass_998201",
+        "month": "02",
+        "day": "25",
+        "year": "1993",
+        "username": "PedroGutierrezrev075"
+    },
+    {
+        "name": "Ana Castillo",
+        "email": "ana_castillo@cabichui.com",
+        "password": "pass_329018",
+        "month": "09",
+        "day": "11",
+        "year": "1995",
+        "username": "AnaCastilloftf609"
+    },
+    {
+        "name": "Carlos Fernandez",
+        "email": "carlos_fernandez@cabichui.com",
+        "password": "pass_552719",
+        "month": "11",
+        "day": "26",
+        "year": "1994",
+        "username": "CarlosFernandezdyr804"
+    },
+    {
+        "name": "Miguel Diaz",
+        "email": "miguel_diaz@cabichui.com",
+        "password": "pass_771002",
+        "month": "07",
+        "day": "10",
+        "year": "1997",
+        "username": "MiguelDiazwec834"
+    },
+    {
+        "name": "Sofia Torres",
+        "email": "sofia_torres@cabichui.com",
+        "password": "pass_882013",
+        "month": "04",
+        "day": "04",
+        "year": "1998",
+        "username": "SofiaTorresltd027"
+    },
+    {
+        "name": "Jose Lopez",
+        "email": "jose_lopez@cabichui.com",
+        "password": "pass_123809",
+        "month": "03",
+        "day": "20",
+        "year": "2000",
+        "username": "JoseLopezetn123"
+    },
+    {
+        "name": "Laura Fernandez",
+        "email": "laura_fernandez@cabichui.com",
+        "password": "pass_662122",
+        "month": "12",
+        "day": "18",
+        "year": "1999",
+        "username": "LauraFernandezfkk246"
+    },
+    {
+        "name": "Ana Gomez",
+        "email": "ana_gomez@cabichui.com",
+        "password": "pass_552092",
+        "month": "10",
+        "day": "01",
+        "year": "2002",
+        "username": "AnaGomezmgz455"
+    },
+    {
+        "name": "Carlos Ramirez",
+        "email": "carlos_ramirez@cabichui.com",
+        "password": "pass_449002",
+        "month": "05",
+        "day": "14",
+        "year": "1990",
+        "username": "CarlosRamirezgdc953"
+    },
+    {
+        "name": "Miguel Vargas",
+        "email": "miguel_vargas@cabichui.com",
+        "password": "pass_662711",
+        "month": "09",
+        "day": "12",
+        "year": "1996",
+        "username": "MiguelVargasjpi958"
+    }
+]

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Bot Social{% endblock %}
+
+{% block content %}
+<div class="mb-8 flex justify-between items-center">
+    <div>
+        <h2 class="text-3xl font-bold text-gray-800">Bienvenido al Panel de Control</h2>
+        <p class="text-gray-500 mt-2">Gestión de bots y cuentas sociales.</p>
+    </div>
+    <div class="flex gap-4">
+        <a href="/profiles/create" class="btn-primary-custom">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            Nuevo Perfil
+        </a>
+        <a href="/profiles/upload" class="btn-outline-custom">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+            Carga Masiva
+        </a>
+    </div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Card 1 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-blue-500 hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h5 class="text-lg font-semibold text-gray-700">Cuentas Activas</h5>
+                <span class="p-2 bg-blue-100 rounded-full text-blue-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </span>
+            </div>
+            <div class="flex items-baseline">
+                <h2 class="text-4xl font-bold text-gray-800">0</h2>
+                <span class="ml-2 text-sm text-gray-500">cuentas</span>
+            </div>
+            <p class="mt-4 text-sm text-gray-600">Total de cuentas gestionadas.</p>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-green-500 hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h5 class="text-lg font-semibold text-gray-700">Tareas Completadas</h5>
+                <span class="p-2 bg-green-100 rounded-full text-green-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </span>
+            </div>
+            <div class="flex items-baseline">
+                <h2 class="text-4xl font-bold text-gray-800">0</h2>
+                <span class="ml-2 text-sm text-gray-500">acciones</span>
+            </div>
+            <p class="mt-4 text-sm text-gray-600">Acciones realizadas hoy.</p>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden border-l-4 border-red-500 hover:shadow-lg transition-shadow duration-300">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h5 class="text-lg font-semibold text-gray-700">Errores</h5>
+                <span class="p-2 bg-red-100 rounded-full text-red-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                </span>
+            </div>
+            <div class="flex items-baseline">
+                <h2 class="text-4xl font-bold text-gray-800">0</h2>
+                <span class="ml-2 text-sm text-gray-500">alertas</span>
+            </div>
+            <p class="mt-4 text-sm text-gray-600">Alertas recientes.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

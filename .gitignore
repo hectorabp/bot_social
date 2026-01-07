@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.env
+*.log
+cookies.json
+session_data/
+search/cookies/
+create_account/*_logs.json
+logs/facebook/*.json
+cuentas_generadas.json
+usuarios_procesados.csv
+*.tmp

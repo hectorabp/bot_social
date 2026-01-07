@@ -1,0 +1,92 @@
+
+services:
+
+  db_backend_bot_social:
+    image: mysql:8.0
+    container_name: db_backend_bot_social
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - dbdata_encuesta_bot_social:/var/lib/mysql
+      - ./backend/database:/docker-entrypoint-initdb.d
+    restart: always
+
+  backend_bot_social:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend_bot_social
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+      - TZ=America/Asuncion
+      - MYSQL_HOST=db_backend_bot_social
+      - MYSQL_PORT=3306
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - REDIS_HOST=redis_bot_social
+      - REDIS_PORT=6379
+    depends_on:
+      - db_backend_bot_social
+    ports:
+      - "5000:5000"
+
+  celery_worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: celery_worker
+    restart: unless-stopped
+    environment:
+      - FLASK_ENV=production
+      - PYTHONUNBUFFERED=1
+      - TZ=America/Asuncion
+      - MYSQL_HOST=db_backend_bot_social
+      - MYSQL_PORT=3306
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - REDIS_HOST=redis_bot_social
+      - REDIS_PORT=6379
+    depends_on:
+      - db_backend_bot_social
+      - redis_bot_social
+    # Use module path to the Celery app defined in backend/scheduled_service/celery_app.py
+    command: ["celery", "-A", "scheduled_service.celery_app:celery_app", "worker", "--loglevel=info"]
+
+  redis_bot_social:
+    image: redis:7
+    container_name: redis_bot_social
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  email_generator:
+     build:
+       context: ./email_generator
+       dockerfile: Dockerfile
+     container_name: email_generator
+     restart: unless-stopped
+     environment:
+       - FLASK_ENV=production
+       - PYTHONUNBUFFERED=1
+       - TZ=America/Asuncion
+     ports:
+       - "3000:3000"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOSTS=db_backend_bot_social
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+
+volumes:
+  dbdata_encuesta_bot_social:
+    driver: local

@@ -1,0 +1,51 @@
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+from modules.config import Database
+
+
+class NeighborhoodsModule:
+    """Módulo para la tabla `barrios`."""
+
+    def __init__(self):
+        self.db = Database()
+        self.table = 'barrios'
+
+    def create(self, barrio: str, id_ciudad: int) -> int:
+        if not barrio:
+            raise ValueError("El campo 'barrio' es obligatorio")
+        if id_ciudad is None:
+            raise ValueError("El campo 'id_ciudad' es obligatorio")
+        query = f"INSERT INTO {self.table} (barrio, id_ciudad) VALUES (%s, %s)"
+        return self.db.insert_query(query, (barrio, id_ciudad))
+
+    def list_all(self) -> list:
+        query = f"SELECT id, barrio, id_ciudad FROM {self.table} ORDER BY barrio"
+        return self.db.query(query) or []
+
+    def read(self, id: int) -> dict | None:
+        query = f"SELECT id, barrio, id_ciudad FROM {self.table} WHERE id = %s"
+        results = self.db.query(query, (id,))
+        return results[0] if results else None
+
+    def update(self, id: int, barrio: str = None, id_ciudad: int = None) -> bool:
+        fields = []
+        params = []
+        if barrio is not None:
+            fields.append('barrio = %s')
+            params.append(barrio)
+        if id_ciudad is not None:
+            fields.append('id_ciudad = %s')
+            params.append(id_ciudad)
+        if not fields:
+            return False
+        params.append(id)
+        set_clause = ', '.join(fields)
+        query = f"UPDATE {self.table} SET {set_clause} WHERE id = %s"
+        rowcount = self.db.query(query, tuple(params))
+        return bool(rowcount)
+
+    def delete(self, id: int) -> bool:
+        query = f"DELETE FROM {self.table} WHERE id = %s"
+        rowcount = self.db.query(query, (id,))
+        return bool(rowcount)

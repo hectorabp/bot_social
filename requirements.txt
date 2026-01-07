@@ -1,0 +1,12 @@
+playwright
+tenacity
+pandas
+blinker==1.6.2
+setuptools
+flask
+openpyxl
+openai
+beautifulsoup4
+undetected-chromedriver
+requests
+redis

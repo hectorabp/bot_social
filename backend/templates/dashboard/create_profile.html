@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}Crear Perfil - Bot Social{% endblock %}
+
+{% block content %}
+<div class="section-container">
+    <div class="flex justify-between items-center mb-8">
+        <div>
+            <h2 class="text-3xl font-bold text-gray-800 heading-gradient">Crear Nuevo Perfil</h2>
+            <p class="text-subtitle mt-2">Completa la información para generar un nuevo perfil de bot.</p>
+        </div>
+        <a href="/dashboard" class="btn-outline-custom flex items-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Volver
+        </a>
+    </div>
+
+    <div class="card-custom p-8">
+        <form action="/profiles/create" method="POST" class="space-y-8">
+            
+            <!-- Sección: Información Personal -->
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Información Personal</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div>
+                        <label for="nombre" class="label-custom">Nombre</label>
+                        <input type="text" class="input-custom" id="nombre" name="nombre" required placeholder="Ej. Juan">
+                    </div>
+                    <div>
+                        <label for="apellido" class="label-custom">Apellido</label>
+                        <input type="text" class="input-custom" id="apellido" name="apellido" required placeholder="Ej. Pérez">
+                    </div>
+                    <div>
+                        <label for="fecha_nacimiento" class="label-custom">Fecha de Nacimiento</label>
+                        <input type="date" class="input-custom" id="fecha_nacimiento" name="fecha_nacimiento">
+                    </div>
+                    <div>
+                        <label for="genero" class="label-custom">Género</label>
+                        <select class="input-custom" id="genero" name="id_genero">
+                            <option value="">Seleccionar...</option>
+                            {% for g in generos %}
+                            <option value="{{ g.id }}">{{ g.genero }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label for="telefono" class="label-custom">Teléfono</label>
+                        <input type="text" class="input-custom" id="telefono" name="telefono" placeholder="+595...">
+                    </div>
+                    <div>
+                        <label for="correo" class="label-custom">Correo Electrónico</label>
+                        <input type="email" class="input-custom" id="correo" name="correo" required placeholder="email@ejemplo.com">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección: Ubicación -->
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Ubicación</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label for="pais" class="label-custom">País</label>
+                        <select class="input-custom" id="pais" name="id_pais">
+                            <option value="">Seleccionar...</option>
+                            {% for p in paises %}
+                            <option value="{{ p.id }}">{{ p.pais }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label for="ciudad" class="label-custom">Ciudad</label>
+                        <select class="input-custom" id="ciudad" name="id_ciudad">
+                            <option value="">Seleccionar...</option>
+                            {% for c in ciudades %}
+                            <option value="{{ c.id }}">{{ c.ciudad }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label for="barrio" class="label-custom">Barrio</label>
+                        <select class="input-custom" id="barrio" name="id_barrio">
+                            <option value="">Seleccionar...</option>
+                            {% for b in barrios %}
+                            <option value="{{ b.id }}">{{ b.barrio }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="md:col-span-3">
+                        <label for="calle" class="label-custom">Dirección / Calle</label>
+                        <input type="text" class="input-custom" id="calle" name="calle" placeholder="Calle Principal 123">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección: Preferencias e Intereses -->
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Preferencias e Intereses</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="partido_politico" class="label-custom">Partido Político</label>
+                        <select class="input-custom" id="partido_politico" name="id_partido_politico">
+                            <option value="">Seleccionar...</option>
+                            {% for pp in partidos %}
+                            <option value="{{ pp.id }}">{{ pp.partido_politico }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label for="club_futbol" class="label-custom">Club de Fútbol</label>
+                        <select class="input-custom" id="club_futbol" name="id_club_futbol">
+                            <option value="">Seleccionar...</option>
+                            {% for cf in clubes %}
+                            <option value="{{ cf.id }}">{{ cf.club_futbol }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label for="ideologia" class="label-custom">Ideología</label>
+                        <select class="input-custom" id="ideologia" name="id_ideologia">
+                            <option value="">Seleccionar...</option>
+                            {% for i in ideologias %}
+                            <option value="{{ i.id }}">{{ i.ideologia }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div>
+                        <label for="estilo_musica" class="label-custom">Estilo de Música</label>
+                        <select class="input-custom" id="estilo_musica" name="id_estilo_musica">
+                            <option value="">Seleccionar...</option>
+                            {% for em in musicas %}
+                            <option value="{{ em.id }}">{{ em.estilo_musica }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección: Redes Sociales -->
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Cuentas Sociales</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Twitter / X -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <h4 class="font-medium text-gray-700 mb-3 flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            Twitter (X)
+                        </h4>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="label-custom text-xs">Usuario</label>
+                                <input type="text" class="input-custom text-sm" name="cuenta_TW" placeholder="@usuario">
+                            </div>
+                            <div>
+                                <label class="label-custom text-xs">Contraseña</label>
+                                <input type="password" class="input-custom text-sm" name="password_TW" placeholder="••••••">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facebook -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <h4 class="font-medium text-gray-700 mb-3 flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            Facebook
+                        </h4>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="label-custom text-xs">Usuario</label>
+                                <input type="text" class="input-custom text-sm" name="cuenta_FB" placeholder="Usuario FB">
+                            </div>
+                            <div>
+                                <label class="label-custom text-xs">Contraseña</label>
+                                <input type="password" class="input-custom text-sm" name="password_FB" placeholder="••••••">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-6 flex justify-end gap-4">
+                <a href="/dashboard" class="btn-outline-custom">Cancelar</a>
+                <button type="submit" class="btn-primary-custom">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Guardar Perfil
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
