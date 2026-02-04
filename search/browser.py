@@ -1,6 +1,7 @@
 import asyncio
 import random
 import json
+import os
 import typing as t
 from pathlib import Path
 from tenacity import retry, stop_after_attempt, wait_exponential
@@ -121,17 +122,25 @@ class BrowserManager:
             # Usamos los datos del self.profile en lugar de randomizar aquí
             p_data = self.profile
             
+            # Verificar si se solicitó desactivar el proxy (para debugging)
+            proxy_config = None
+            if not os.getenv("NO_PROXY"):
+                proxy_config = {
+                    "server": f"http://{self.proxy_host}:{self.proxy_port}",
+                    "username": self.proxy_username,
+                    "password": self.proxy_password
+                }
+            else:
+                print("[!] ADVERTENCIA: Proxy desactivado por variable de entorno NO_PROXY")
+
             context = await browser.new_context(
                 user_agent=p_data["user_agent"],
                 viewport=p_data["viewport"],
                 device_scale_factor=p_data["device_scale_factor"],
                 has_touch=False,
                 is_mobile=False,
-                proxy={
-                    "server": f"http://{self.proxy_host}:{self.proxy_port}",
-                    "username": self.proxy_username,
-                    "password": self.proxy_password
-                },
+                proxy=proxy_config,
+                ignore_https_errors=True, # Importante para evitar errores de túnel SSL
                 locale="es-ES",
                 timezone_id="America/Asuncion",
                 permissions=["geolocation"],
